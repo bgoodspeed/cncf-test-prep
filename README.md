@@ -32,6 +32,7 @@ ip addr
 
 ## DNS
 
+### default name resolution
 service-name
 service-name.NAMESPACE
 service-name.NAMESPACE.TYPE.ROOT
@@ -40,7 +41,13 @@ e.g.
 db-service.prod.svc.cluster.local
 db-pod.dev.pod.cluster.local
 
+### what are you using?
+kubectl get pods -n kube-system
+(look for coredns-* in kube-system)
+
+
 ## CoreDNS
 /etc/coredns/Corefile
 
+## ingress
 
