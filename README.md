@@ -64,4 +64,18 @@ kubectl create namespace ingress-space
 kubectl create configmap -n ingress-space nginx-configuration
 kubectl create serviceaccount -n ingress-space ingress-serviceaccount
 
+## kubeadm
 
+need multiple systems (master node(s)), etcd HA nodes, worker nodes. install docker on all nodes.
+install kubeadm on all nodes
+
+initialize master
+build pod network
+join nodes to cluster
+
+master: kubeadm init 
+master: create config file from admin.conf
+master: copy join token string from output
+node: kubeadm join 172.17.0.19:6443 --token hl6ftb.82p3uqu1x402e3ej \
+    --discovery-token-ca-cert-hash sha256:b9215358c2350ba833986ccadc981ca5f45e6efafc806613eecbcd9de3022c0c
+    
